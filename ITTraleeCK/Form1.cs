@@ -27,11 +27,6 @@ namespace ITTraleeCK
                 ITTraleeCK mainForm = new ITTraleeCK();
                 mainForm.Show();
             }
-           
-            /*try{} catch{MessageBox.Show("error")}*/ 
-
-
-
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -41,7 +36,5 @@ namespace ITTraleeCK
             this.Hide();
             registerForm.Show();
         }
-
-       
     }
 }

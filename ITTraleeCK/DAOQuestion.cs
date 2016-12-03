@@ -41,7 +41,7 @@ namespace ITTraleeCK
                 throw;
             }
 
-            while (reader != null && reader.Read())
+          /*  while (reader != null && reader.Read())
             {
                 question.QuestionID = reader.GetInt32(0);
                 question.MemberID = Convert.ToInt32(reader.GetValue(1));
@@ -56,7 +56,7 @@ namespace ITTraleeCK
                     Console.WriteLine("liste DAO : " + q.ToString());
                 }
 
-            }
+            }*/
 
             return questions.ToList<Question>();
         }

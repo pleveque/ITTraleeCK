@@ -10,7 +10,9 @@ namespace ITTraleeCK
     class DBConnection
     {
         private static bool isOpen;
-        private static string queryConn = "DATA SOURCE=test.c2221yhnbscd.eu-west-1.rds.amazonaws.com:1521/ORCL;PERSIST SECURITY INFO=True;USER ID=ADMIN;PASSWORD=itt12345";
+        //private static string queryConn = "DATA SOURCE=studentoracle.students.ittralee.ie:1521/orcl;PERSIST SECURITY INFO=True;USER ID=T00191900;PASSWORD=sxauet79";
+        private static string queryConn = "DATA SOURCE=localhost:1521/xe;USER ID=PIERRE;PASSWORD=pierre";
+
 
         private static OracleConnection connection = new OracleConnection(queryConn);
 

@@ -135,7 +135,16 @@ namespace ITTraleeCK
        override
        public string ToString()
         {
-            return this.MemberID + " " + this.Username;
+            return "memberID: " + this.MemberID + 
+                " username : " + this.Username + 
+                " password : " + this.MemberPassword + 
+                " age : " + this.Age +
+                " email : " + this.Email + 
+                " Gender : " + this.Gender +
+                " Nationality : " + this.Nationality +
+                " Category of knowledge : " + this.CategoryOfKnowledge + 
+                " newsletter : " + this.newsletter + 
+                " type of member : " + this.typeOfMember;
         }
 
     }
