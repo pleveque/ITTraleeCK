@@ -48,7 +48,6 @@
             this.listViewUsers = new System.Windows.Forms.ListView();
             this.ColumnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColumnPassword = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnAge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnGender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,11 +56,11 @@
             this.ColumnNewsletter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnTypeUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageForum = new System.Windows.Forms.TabPage();
-            this.textBoxGender = new System.Windows.Forms.TextBox();
-            this.textBoxCatKnow = new System.Windows.Forms.TextBox();
-            this.textBoxNationality = new System.Windows.Forms.TextBox();
-            this.textBoxTypeOfMember = new System.Windows.Forms.TextBox();
             this.labelTypeOfMember = new System.Windows.Forms.Label();
+            this.label2TypeOfMember = new System.Windows.Forms.Label();
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.comboBoxNationality = new System.Windows.Forms.ComboBox();
+            this.comboBoxCatKnowledge = new System.Windows.Forms.ComboBox();
             this.Users.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
@@ -81,11 +80,11 @@
             // 
             // tabPageInformation
             // 
-            this.tabPageInformation.Controls.Add(this.textBoxTypeOfMember);
+            this.tabPageInformation.Controls.Add(this.comboBoxGender);
+            this.tabPageInformation.Controls.Add(this.comboBoxNationality);
+            this.tabPageInformation.Controls.Add(this.comboBoxCatKnowledge);
+            this.tabPageInformation.Controls.Add(this.label2TypeOfMember);
             this.tabPageInformation.Controls.Add(this.labelTypeOfMember);
-            this.tabPageInformation.Controls.Add(this.textBoxNationality);
-            this.tabPageInformation.Controls.Add(this.textBoxCatKnow);
-            this.tabPageInformation.Controls.Add(this.textBoxGender);
             this.tabPageInformation.Controls.Add(this.buttonUpdate);
             this.tabPageInformation.Controls.Add(this.textBoxAge);
             this.tabPageInformation.Controls.Add(this.checkBoxNewsletter);
@@ -114,8 +113,9 @@
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(94, 34);
             this.buttonUpdate.TabIndex = 43;
-            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.Text = "Save";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textBoxAge
             // 
@@ -246,7 +246,6 @@
             this.listViewUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnID,
             this.ColumnUsername,
-            this.ColumnPassword,
             this.ColumnAge,
             this.ColumnEmail,
             this.ColumnGender,
@@ -271,10 +270,6 @@
             // 
             this.ColumnUsername.Text = "Username";
             this.ColumnUsername.Width = 84;
-            // 
-            // ColumnPassword
-            // 
-            this.ColumnPassword.Text = "Password";
             // 
             // ColumnAge
             // 
@@ -320,34 +315,6 @@
             this.tabPageForum.Text = "Forum";
             this.tabPageForum.UseVisualStyleBackColor = true;
             // 
-            // textBoxGender
-            // 
-            this.textBoxGender.Location = new System.Drawing.Point(368, 140);
-            this.textBoxGender.Name = "textBoxGender";
-            this.textBoxGender.Size = new System.Drawing.Size(165, 20);
-            this.textBoxGender.TabIndex = 44;
-            // 
-            // textBoxCatKnow
-            // 
-            this.textBoxCatKnow.Location = new System.Drawing.Point(368, 194);
-            this.textBoxCatKnow.Name = "textBoxCatKnow";
-            this.textBoxCatKnow.Size = new System.Drawing.Size(167, 20);
-            this.textBoxCatKnow.TabIndex = 45;
-            // 
-            // textBoxNationality
-            // 
-            this.textBoxNationality.Location = new System.Drawing.Point(366, 263);
-            this.textBoxNationality.Name = "textBoxNationality";
-            this.textBoxNationality.Size = new System.Drawing.Size(163, 20);
-            this.textBoxNationality.TabIndex = 46;
-            // 
-            // textBoxTypeOfMember
-            // 
-            this.textBoxTypeOfMember.Location = new System.Drawing.Point(103, 263);
-            this.textBoxTypeOfMember.Name = "textBoxTypeOfMember";
-            this.textBoxTypeOfMember.Size = new System.Drawing.Size(167, 20);
-            this.textBoxTypeOfMember.TabIndex = 48;
-            // 
             // labelTypeOfMember
             // 
             this.labelTypeOfMember.AutoSize = true;
@@ -357,6 +324,272 @@
             this.labelTypeOfMember.TabIndex = 47;
             this.labelTypeOfMember.Text = "Type of member";
             // 
+            // label2TypeOfMember
+            // 
+            this.label2TypeOfMember.AutoSize = true;
+            this.label2TypeOfMember.Location = new System.Drawing.Point(104, 270);
+            this.label2TypeOfMember.Name = "label2TypeOfMember";
+            this.label2TypeOfMember.Size = new System.Drawing.Size(0, 13);
+            this.label2TypeOfMember.TabIndex = 48;
+            // 
+            // comboBoxGender
+            // 
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBoxGender.Location = new System.Drawing.Point(366, 140);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(165, 21);
+            this.comboBoxGender.TabIndex = 51;
+            // 
+            // comboBoxNationality
+            // 
+            this.comboBoxNationality.FormattingEnabled = true;
+            this.comboBoxNationality.Items.AddRange(new object[] {
+            "AFGHANISTAN ",
+            "Afrique_Centrale  ",
+            "Afrique_du_Sud  ",
+            "Albanie  ",
+            "Algerie  ",
+            "Allemagne  ",
+            "Andorre  ",
+            "Angola  ",
+            "Anguilla  ",
+            "Arabie_Saoudite  ",
+            "Argentine  ",
+            "Armenie  ",
+            "Australie  ",
+            "Autriche  ",
+            "Azerbaidjan  ",
+            "Bahamas  ",
+            "Bangladesh  ",
+            "Barbade  ",
+            "Bahrein  ",
+            "Belgique  ",
+            "Belize  ",
+            "Benin  ",
+            "Bermudes  ",
+            "Bielorussie  ",
+            "Bolivie  ",
+            "Botswana  ",
+            "Bhoutan  ",
+            "Boznie_Herzegovine  ",
+            "Bresil  ",
+            "Brunei  ",
+            "Bulgarie  ",
+            "Burkina_Faso  ",
+            "Burundi  ",
+            "Caiman  ",
+            "Cambodge  ",
+            "Cameroun  ",
+            "Canada  ",
+            "Canaries  ",
+            "Cap_Vert  ",
+            "Chili  ",
+            "Chine  ",
+            "Chypre  ",
+            "Colombie  ",
+            "Congo  ",
+            "Congo_democratique  ",
+            "Coree_du_Nord  ",
+            "Coree_du_Sud  ",
+            "Costa_Rica  ",
+            "Côte_d_Ivoire  ",
+            "Croatie  ",
+            "Cuba  ",
+            "Danemark  ",
+            "Djibouti  ",
+            "Dominique  ",
+            "Egypte  ",
+            "Emirats_Arabes_Unis  ",
+            "Equateur  ",
+            "Erythree  ",
+            "Espagne  ",
+            "Estonie  ",
+            "Etats_Unis  ",
+            "Ethiopie  ",
+            "Falkland  ",
+            "Feroe  ",
+            "Fidji  ",
+            "Finlande  ",
+            "France  ",
+            "Gabon  ",
+            "Gambie  ",
+            "Georgie  ",
+            "Ghana  ",
+            "Gibraltar  ",
+            "Grece  ",
+            "Grenade  ",
+            "Groenland  ",
+            "Guadeloupe  ",
+            "Guatemala ",
+            "Guernesey  ",
+            "Guinee  ",
+            "Guinee_Bissau  ",
+            "Guinee_Equatoriale  ",
+            "Guyana  ",
+            "Guyane_Francaise  ",
+            "Haiti  ",
+            "Hawaii  ",
+            "Honduras  ",
+            "Hong_Kong  ",
+            "Hongrie  ",
+            "Indonesie  ",
+            "Iran  ",
+            "Iraq  ",
+            "Irlande  ",
+            "Islande  ",
+            "Israel  ",
+            "Italie  ",
+            "Jamaique  ",
+            "Jan_Mayen  ",
+            "Japon  ",
+            "Jersey  ",
+            "Jordanie  ",
+            "Kazakhstan  ",
+            "Kenya  ",
+            "Kirghizistan  ",
+            "Kiribati  ",
+            "Koweit  ",
+            "Laos  ",
+            "Lesotho  ",
+            "Lettonie  ",
+            "Liban  ",
+            "Liberia  ",
+            "Liechtenstein  ",
+            "Lituanie  ",
+            "Luxembourg  ",
+            "Lybie  ",
+            "Macao  ",
+            "Macedoine  ",
+            "Madagascar  ",
+            "Madère  ",
+            "Malaisie  ",
+            "Malawi  ",
+            "Maldives  ",
+            "Mali  ",
+            "Malte  ",
+            "Mariannes_du_Nord  ",
+            "Maroc  ",
+            "Marshall  ",
+            "Martinique  ",
+            "Maurice  ",
+            "Mauritanie  ",
+            "Mayotte  ",
+            "Mexique  ",
+            "Micronesie  ",
+            "Midway  ",
+            "Moldavie  ",
+            "Monaco  ",
+            "Mongolie  ",
+            "Montserrat  ",
+            "Mozambique  ",
+            "Namibie  ",
+            "Nauru  ",
+            "Nepal  ",
+            "Nicaragua  ",
+            "Niger  ",
+            "Nigeria  ",
+            "Norfolk  ",
+            "Norvege  ",
+            "Nouvelle_Caledonie  ",
+            "Nouvelle_Zelande  ",
+            "Ouganda  ",
+            "Ouzbekistan  ",
+            "Pakistan  ",
+            "Palau  ",
+            "Palestine  ",
+            "Panama  ",
+            "Papouasie_Nouvelle_Guinee  ",
+            "Paraguay  ",
+            "Pays_Bas  ",
+            "Perou  ",
+            "Philippines  ",
+            "Pologne  ",
+            "Polynesie  ",
+            "Porto_Rico  ",
+            "Portugal  ",
+            "Qatar  ",
+            "Republique_Dominicaine  ",
+            "Republique_Tcheque  ",
+            "Reunion  ",
+            "Roumanie  ",
+            "Royaume_Uni  ",
+            "Russie  ",
+            "Rwanda  ",
+            "Sahara_Occidental  ",
+            "Sainte_Lucie  ",
+            "Saint_Marin  ",
+            "Salomon  ",
+            "Salvador  ",
+            "Samoa_Occidentales ",
+            "Samoa_Americaine  ",
+            "Sao_Tome_et_Principe  ",
+            "Senegal  ",
+            "Seychelles  ",
+            "Sierra_Leone  ",
+            "Singapour  ",
+            "Slovaquie  ",
+            "Slovenie ",
+            "Somalie  ",
+            "Soudan  ",
+            "Sri_Lanka  ",
+            "S1uede  ",
+            "Suisse  ",
+            "Surinam  ",
+            "Swaziland  ",
+            "Syrie  ",
+            "Tadjikistan  ",
+            "Taiwan  ",
+            "Tonga  ",
+            "Tanzanie  ",
+            "Tchad  ",
+            "Thailande  ",
+            "Tibet  ",
+            "Timor_Oriental  ",
+            "Togo ",
+            "Tunisie  ",
+            "Turmenistan  ",
+            "Turquie  ",
+            "Ukraine  ",
+            "Uruguay  ",
+            "Vanuatu  ",
+            "Vatican  ",
+            "Venezuela  ",
+            "Vierges_Americaines  ",
+            "Vierges_Britanniques  ",
+            "Vietnam  ",
+            "Yemen  ",
+            "Yougoslavie  ",
+            "Zambie  ",
+            "Zimbabwe"});
+            this.comboBoxNationality.Location = new System.Drawing.Point(368, 270);
+            this.comboBoxNationality.Name = "comboBoxNationality";
+            this.comboBoxNationality.Size = new System.Drawing.Size(167, 21);
+            this.comboBoxNationality.TabIndex = 50;
+            // 
+            // comboBoxCatKnowledge
+            // 
+            this.comboBoxCatKnowledge.FormattingEnabled = true;
+            this.comboBoxCatKnowledge.Items.AddRange(new object[] {
+            "Creative Media",
+            "Computing",
+            "Business",
+            "Tourism",
+            "Agricultural Engineering",
+            "Civil Engineering",
+            "Construction Studies",
+            "Biological Studies",
+            "Pharmaceutical Studies",
+            "Nursing",
+            "Social Sciences",
+            "Health and Leisure Studies"});
+            this.comboBoxCatKnowledge.Location = new System.Drawing.Point(364, 196);
+            this.comboBoxCatKnowledge.Name = "comboBoxCatKnowledge";
+            this.comboBoxCatKnowledge.Size = new System.Drawing.Size(167, 21);
+            this.comboBoxCatKnowledge.TabIndex = 49;
+            // 
             // ITTraleeCK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,7 +597,7 @@
             this.ClientSize = new System.Drawing.Size(802, 384);
             this.Controls.Add(this.Users);
             this.Name = "ITTraleeCK";
-            this.Text = "ITTraleeCK Admin";
+            this.Text = "ITTraleeCK ";
             this.VisibleChanged += new System.EventHandler(this.ITTraleeCK_VisibleChanged);
             this.Users.ResumeLayout(false);
             this.tabPageInformation.ResumeLayout(false);
@@ -404,11 +637,10 @@
         private System.Windows.Forms.ColumnHeader ColumnCatKnow;
         private System.Windows.Forms.ColumnHeader ColumnNewsletter;
         private System.Windows.Forms.ColumnHeader ColumnTypeUser;
-        private System.Windows.Forms.ColumnHeader ColumnPassword;
-        private System.Windows.Forms.TextBox textBoxNationality;
-        private System.Windows.Forms.TextBox textBoxCatKnow;
-        private System.Windows.Forms.TextBox textBoxGender;
-        private System.Windows.Forms.TextBox textBoxTypeOfMember;
         private System.Windows.Forms.Label labelTypeOfMember;
+        private System.Windows.Forms.Label label2TypeOfMember;
+        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.ComboBox comboBoxNationality;
+        private System.Windows.Forms.ComboBox comboBoxCatKnowledge;
     }
 }

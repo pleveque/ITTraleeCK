@@ -63,3 +63,4 @@ C:\Users\Pc_Pierre\Desktop\DUCTI\Database\Phase3\ITTraleeCKGit\ITTraleeCK\ITTral
 C:\Users\Pc_Pierre\Desktop\DUCTI\Database\Phase3\ITTraleeCKGit\ITTraleeCK\ITTraleeCK\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Pc_Pierre\Desktop\DUCTI\Database\Phase3\ITTraleeCKGit\ITTraleeCK\ITTraleeCK\obj\Debug\ITTraleeCK.exe
 C:\Users\Pc_Pierre\Desktop\DUCTI\Database\Phase3\ITTraleeCKGit\ITTraleeCK\ITTraleeCK\obj\Debug\ITTraleeCK.pdb
+C:\Users\Pc_Pierre\Desktop\DUCTI\Database\Phase3\ITTraleeCKGit\ITTraleeCK\ITTraleeCK\obj\Debug\ITTraleeCK.csprojResolveAssemblyReference.cache

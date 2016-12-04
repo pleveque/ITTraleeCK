@@ -177,8 +177,6 @@ namespace ITTraleeCK
 
             member = SessionUser.WhoIsLoggedIn();
 
-            Console.WriteLine("member = " + member.MemberID);
-
             string cmdText = @"SELECT * FROM MEMBER WHERE USERNAME ='" + member.Username + "'";
             cmd.CommandText = cmdText;
 
@@ -209,6 +207,44 @@ namespace ITTraleeCK
             }
 
             return member;
+        }
+
+        public static void UpdateMemberConnected(string username, string password, int age, string email, string gender, string nationality, string categoryOfKnowledge, string typeOfMember, string newsletter)
+        {
+            //string username, string password, int age, string email, string gender, string nationality, string categoryOfKnowledge, string typeOfMember, string newsletter
+
+            if (!DBConnection.IsOpen)
+            {
+                // opens the connection 
+                DBConnection.Open();
+            }
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = DBConnection.Connection;
+
+            string strSQL = @"UPDATE MEMBER SET USERNAME='" + username + 
+                "',MEMBERPASSWORD='" + password +
+                "',AGE ='" + age +
+                "',EMAIL ='" + email +
+                "',GENDER ='" + gender +
+                "',NATIONALITY='" + nationality +
+                "',CATEGORY_OF_KNOWLEDGE='" + categoryOfKnowledge + 
+                "',TYPE_OF_MEMBER='" + typeOfMember +
+                "',NEWSLETTER='" + newsletter + 
+                "'WHERE MEMBER_ID='" + SessionUser.WhoIsLoggedIn().MemberID + "'";
+            
+            cmd.CommandText = strSQL;
+           
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            DBConnection.Close();
+
         }
 
     }
