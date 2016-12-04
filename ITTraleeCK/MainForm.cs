@@ -53,9 +53,29 @@ namespace ITTraleeCK
             }
         }
 
-        private void tabPageInformation_Click(object sender, EventArgs e)
+
+        private void ITTraleeCK_VisibleChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("cc");
+
+            Member member = new Member();
+
+            member = DAOMember.SelectMemberConnected();
+
+            textBoxUsername.Text = member.Username;
+            textBoxPassword.Text = member.MemberPassword;
+            textBoxAge.Text = member.Age.ToString();
+            textBoxEmail.Text = member.Email;
+            textBoxGender.Text = member.Gender;
+            textBoxNationality.Text = member.Nationality;
+            textBoxCatKnow.Text = member.CategoryOfKnowledge;
+            textBoxTypeOfMember.Text = member.TypeOfMember;
+
+            if (member.Newsletter.Equals('y')) { 
+            checkBoxNewsletter.CheckState = CheckState.Checked;
+            }
+            else{
+                checkBoxNewsletter.CheckState = CheckState.Unchecked;
+            }
         }
     }
 }

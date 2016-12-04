@@ -6,23 +6,26 @@ using System.Threading.Tasks;
 
 namespace ITTraleeCK
 {
-   /* public static class SessionUser
+    class SessionUser
     {
-            private static Member loggedInMember = null;
 
-            public static void LogOn(Member member)
-            {
-                loggedInMember = member;
-            }
+        private static Member loggedInMember = null;
 
-            public static Member WhoIsLoggedIn()
-            {
-                return loggedInMember;
-            }
+        public static void LogOn(Member member)
+        {
+            loggedInMember = member;
+        }
 
-            public static void LogOut()
-            {
-                loggedInMember = null;
-            }
-    }*/
+        public static Member WhoIsLoggedIn()
+        {
+            return loggedInMember;
+        }
+
+        public static void LogOut()
+        {
+            loggedInMember = null;
+        }
+
+
+    }
 }

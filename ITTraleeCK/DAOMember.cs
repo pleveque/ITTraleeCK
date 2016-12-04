@@ -52,6 +52,9 @@ namespace ITTraleeCK
                         member.Newsletter = reader.GetString(8);
                         member.TypeOfMember = reader.GetString(9);
                     }
+
+                    SessionUser.LogOn(member);
+
                 }
                 else
                 {
@@ -107,8 +110,7 @@ namespace ITTraleeCK
         }
 
 
-
-      public static List<Member> SelectAllMembers()
+        public static List<Member> SelectAllMembers()
         {
             List<Member> members = new List<Member>();
 
@@ -159,6 +161,56 @@ namespace ITTraleeCK
 
             return members; 
         }
+
+        public static Member SelectMemberConnected()
+        {
+            Member member = new Member();
+
+            if (!DBConnection.IsOpen)
+            {
+                // opens the connection 
+                DBConnection.Open();
+            }
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = DBConnection.Connection;
+
+            member = SessionUser.WhoIsLoggedIn();
+
+            Console.WriteLine("member = " + member.MemberID);
+
+            string cmdText = @"SELECT * FROM MEMBER WHERE USERNAME ='" + member.Username + "'";
+            cmd.CommandText = cmdText;
+
+            OracleDataReader reader = null;
+
+            try
+            {
+                reader = cmd.ExecuteReader();
+                
+                    while (reader != null && reader.Read())
+                    {
+                        member.MemberID = reader.GetInt32(0);
+                        member.Username = reader.GetString(1);
+                        member.MemberPassword = reader.GetString(2);
+                        member.Age = reader.GetInt32(3);
+                        member.Email = reader.GetString(4);
+                        member.Gender = reader.GetString(5);
+                        member.Nationality = reader.GetString(6);
+                        member.CategoryOfKnowledge = reader.GetString(7);
+                        member.Newsletter = reader.GetString(8);
+                        member.TypeOfMember = reader.GetString(9);
+                    }
+            }
+
+            catch
+            {
+                throw;
+            }
+
+            return member;
+        }
+
     }
 }
  

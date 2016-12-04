@@ -70,7 +70,6 @@
     <Compile Include="DAOMember.cs" />
     <Compile Include="DAOQuestion.cs" />
     <Compile Include="DBConnection.cs" />
-    <Compile Include="DBSession.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
