@@ -26,7 +26,7 @@ namespace ITTraleeCK
         {
             get
             {
-                return CategoryName;
+                return categoryName;
             }
             set
             {
@@ -36,7 +36,7 @@ namespace ITTraleeCK
 
         public string ToString()
         {
-            return this.CategoryID + " " + this.CategoryName;
+            return "Category ID : " + this.CategoryID + " Category Name : " + this.CategoryName;
         }
 
     }

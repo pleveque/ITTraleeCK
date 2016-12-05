@@ -69,6 +69,5 @@ namespace ITTraleeCK
                 answerDate = value;
             }
         }
-
     }
 }

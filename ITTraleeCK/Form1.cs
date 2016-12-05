@@ -21,7 +21,7 @@ namespace ITTraleeCK
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 
-            if(DAOMember.Login(textBoxUsername.Text, textBoxPassword.Text))
+            if (DAOMember.Login(textBoxUsername.Text, textBoxPassword.Text))
             {
                 this.Hide();
                 ITTraleeCK mainForm = new ITTraleeCK();

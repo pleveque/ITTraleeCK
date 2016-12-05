@@ -175,9 +175,7 @@ namespace ITTraleeCK
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
 
-            member = SessionUser.WhoIsLoggedIn();
-
-            string cmdText = @"SELECT * FROM MEMBER WHERE USERNAME ='" + member.Username + "'";
+            string cmdText = @"SELECT * FROM MEMBER WHERE USERNAME ='" + SessionUser.WhoIsLoggedIn().Username + "'";
             cmd.CommandText = cmdText;
 
             OracleDataReader reader = null;
@@ -211,8 +209,6 @@ namespace ITTraleeCK
 
         public static void UpdateMemberConnected(string username, string password, int age, string email, string gender, string nationality, string categoryOfKnowledge, string typeOfMember, string newsletter)
         {
-            //string username, string password, int age, string email, string gender, string nationality, string categoryOfKnowledge, string typeOfMember, string newsletter
-
             if (!DBConnection.IsOpen)
             {
                 // opens the connection 
@@ -238,15 +234,14 @@ namespace ITTraleeCK
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Saved successfully");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             DBConnection.Close();
-
         }
-
     }
 }
  

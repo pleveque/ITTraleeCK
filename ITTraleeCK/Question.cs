@@ -9,10 +9,10 @@ namespace ITTraleeCK
     class Question
     {
         private int questionID;
-        private Member memberID;
-        private Category categoryID;
+        private Member member;
+        private Category category;
         private string questionText;
-        private string questionDate;
+        private DateTime questionDate;
 
         public int QuestionID
         {
@@ -25,26 +25,26 @@ namespace ITTraleeCK
                 questionID = value;
             }
         }
-        public Member MemberID
+        public Member Member
         {
             get
             {
-                return memberID;
+                return member;
             }
             set
             {
-                memberID = value;
+                member = value;
             }
         }
-        public Category CategoryID
+        public Category Category
         {
             get
             {
-                return categoryID;
+                return category;
             }
             set
             {
-                categoryID = value;
+                category = value;
             }
         }
         public string QuestionText
@@ -58,7 +58,7 @@ namespace ITTraleeCK
                 questionText = value;
             }
         }
-        public string QuestionDate
+        public DateTime QuestionDate
         {
             get
             {
