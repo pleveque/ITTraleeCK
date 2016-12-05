@@ -62,17 +62,26 @@
             this.ColumnTypeUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageForum = new System.Windows.Forms.TabPage();
             this.listViewQuestion = new System.Windows.Forms.ListView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.labelSortedBy = new System.Windows.Forms.Label();
-            this.labelTitleForum = new System.Windows.Forms.Label();
             this.columnAuthor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnQuestion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAnswer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelSortedBy = new System.Windows.Forms.Label();
+            this.labelTitleForum = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelTitlePostQuestion = new System.Windows.Forms.Label();
+            this.labelChooseCategory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
             this.tabPageForum.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -80,6 +89,7 @@
             this.TabControl.Controls.Add(this.tabPageInformation);
             this.TabControl.Controls.Add(this.tabPageUsers);
             this.TabControl.Controls.Add(this.tabPageForum);
+            this.TabControl.Controls.Add(this.tabPage1);
             this.TabControl.Location = new System.Drawing.Point(-1, -1);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
@@ -612,7 +622,8 @@
             this.columnAuthor,
             this.columnQuestion,
             this.columnCategory,
-            this.columnDate});
+            this.columnDate,
+            this.columnAnswer});
             this.listViewQuestion.FullRowSelect = true;
             this.listViewQuestion.GridLines = true;
             this.listViewQuestion.Location = new System.Drawing.Point(36, 105);
@@ -621,6 +632,31 @@
             this.listViewQuestion.TabIndex = 4;
             this.listViewQuestion.UseCompatibleStateImageBehavior = false;
             this.listViewQuestion.View = System.Windows.Forms.View.Details;
+            // 
+            // columnAuthor
+            // 
+            this.columnAuthor.Text = "Author";
+            this.columnAuthor.Width = 105;
+            // 
+            // columnQuestion
+            // 
+            this.columnQuestion.Text = "Question";
+            this.columnQuestion.Width = 91;
+            // 
+            // columnCategory
+            // 
+            this.columnCategory.Text = "Category";
+            this.columnCategory.Width = 80;
+            // 
+            // columnDate
+            // 
+            this.columnDate.Text = "Date";
+            this.columnDate.Width = 102;
+            // 
+            // columnAnswer
+            // 
+            this.columnAnswer.Text = "Answer";
+            this.columnAnswer.Width = 95;
             // 
             // comboBox1
             // 
@@ -649,21 +685,90 @@
             this.labelTitleForum.TabIndex = 0;
             this.labelTitleForum.Text = "Welcome to ITTraleeCK Forum";
             // 
-            // columnAuthor
+            // tabPage1
             // 
-            this.columnAuthor.Text = "Author";
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.comboBoxCategory);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.labelChooseCategory);
+            this.tabPage1.Controls.Add(this.labelTitlePostQuestion);
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(801, 400);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // columnQuestion
+            // textBox1
             // 
-            this.columnQuestion.Text = "Question";
+            this.textBox1.Location = new System.Drawing.Point(165, 119);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(553, 134);
+            this.textBox1.TabIndex = 0;
             // 
-            // columnCategory
+            // labelTitlePostQuestion
             // 
-            this.columnCategory.Text = "Category";
+            this.labelTitlePostQuestion.AutoSize = true;
+            this.labelTitlePostQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.labelTitlePostQuestion.Location = new System.Drawing.Point(256, 3);
+            this.labelTitlePostQuestion.Name = "labelTitlePostQuestion";
+            this.labelTitlePostQuestion.Size = new System.Drawing.Size(201, 31);
+            this.labelTitlePostQuestion.TabIndex = 1;
+            this.labelTitlePostQuestion.Text = "Post a question";
             // 
-            // columnDate
+            // labelChooseCategory
             // 
-            this.columnDate.Text = "Date";
+            this.labelChooseCategory.AutoSize = true;
+            this.labelChooseCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelChooseCategory.Location = new System.Drawing.Point(20, 80);
+            this.labelChooseCategory.Name = "labelChooseCategory";
+            this.labelChooseCategory.Size = new System.Drawing.Size(139, 17);
+            this.labelChooseCategory.TabIndex = 3;
+            this.labelChooseCategory.Text = "Choose a category : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.label1.Location = new System.Drawing.Point(163, 256);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(376, 12);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "*Note : You might write a question with at least 3 characters and maximum 1000 ch" +
+    "aracters";
+            // 
+            // comboBoxCategory
+            // 
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Items.AddRange(new object[] {
+            "Creative Media",
+            "Computing",
+            "Business",
+            "Tourism",
+            "Agricultural Engineering",
+            "Civil Engineering",
+            "Construction Studies",
+            "Biological Studies",
+            "Pharmaceutical Studies",
+            "Nursing",
+            "Social Sciences",
+            "Health and Leisure Studies"});
+            this.comboBoxCategory.Location = new System.Drawing.Point(165, 80);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(217, 21);
+            this.comboBoxCategory.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(666, 313);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 38);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Post question";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ITTraleeCK
             // 
@@ -680,6 +785,8 @@
             this.tabPageUsers.ResumeLayout(false);
             this.tabPageForum.ResumeLayout(false);
             this.tabPageForum.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -727,5 +834,13 @@
         private System.Windows.Forms.ColumnHeader columnQuestion;
         private System.Windows.Forms.ColumnHeader columnCategory;
         private System.Windows.Forms.ColumnHeader columnDate;
+        private System.Windows.Forms.ColumnHeader columnAnswer;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelChooseCategory;
+        private System.Windows.Forms.Label labelTitlePostQuestion;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
     }
 }

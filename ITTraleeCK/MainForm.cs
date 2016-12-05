@@ -140,13 +140,19 @@ namespace ITTraleeCK
                     break;
             }
         }
-
+        
         private void DisplayAllQuestions()
         {
             List<Question> list = new List<Question>();
 
             listViewQuestion.Items.Clear();
-                        
+
+            Button buttonAnswer = new Button();
+            this.Controls.Add(buttonAnswer);
+            buttonAnswer.Top = 75 * 23;
+            buttonAnswer.Text = "See Answer";
+
+
             list = DAOQuestion.SelectAllQuestions();
 
             foreach (Question q in list)
@@ -155,6 +161,8 @@ namespace ITTraleeCK
                 item.SubItems.Add(q.QuestionText);
                 item.SubItems.Add(q.Category.CategoryName);
                 item.SubItems.Add(q.QuestionDate.ToString());
+                item.SubItems.Add(buttonAnswer.);
+
 
                 listViewQuestion.Items.Add(item);
             }
