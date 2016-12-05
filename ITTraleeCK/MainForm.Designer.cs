@@ -71,12 +71,14 @@
             this.labelSortedBy = new System.Windows.Forms.Label();
             this.labelTitleForum = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelTitlePostQuestion = new System.Windows.Forms.Label();
-            this.labelChooseCategory = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PostQuestion = new System.Windows.Forms.Button();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelChooseCategory = new System.Windows.Forms.Label();
+            this.labelTitlePostQuestion = new System.Windows.Forms.Label();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelWriteQuestion = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
@@ -90,6 +92,7 @@
             this.TabControl.Controls.Add(this.tabPageUsers);
             this.TabControl.Controls.Add(this.tabPageForum);
             this.TabControl.Controls.Add(this.tabPage1);
+            this.TabControl.Controls.Add(this.tabPage2);
             this.TabControl.Location = new System.Drawing.Point(-1, -1);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
@@ -375,19 +378,6 @@
             // comboBoxCatKnowledge
             // 
             this.comboBoxCatKnowledge.FormattingEnabled = true;
-            this.comboBoxCatKnowledge.Items.AddRange(new object[] {
-            "Creative Media",
-            "Computing",
-            "Business",
-            "Tourism",
-            "Agricultural Engineering",
-            "Civil Engineering",
-            "Construction Studies",
-            "Biological Studies",
-            "Pharmaceutical Studies",
-            "Nursing",
-            "Social Sciences",
-            "Health and Leisure Studies"});
             this.comboBoxCatKnowledge.Location = new System.Drawing.Point(364, 196);
             this.comboBoxCatKnowledge.Name = "comboBoxCatKnowledge";
             this.comboBoxCatKnowledge.Size = new System.Drawing.Size(167, 21);
@@ -679,7 +669,7 @@
             // 
             this.labelTitleForum.AutoSize = true;
             this.labelTitleForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.labelTitleForum.Location = new System.Drawing.Point(221, 3);
+            this.labelTitleForum.Location = new System.Drawing.Point(254, 14);
             this.labelTitleForum.Name = "labelTitleForum";
             this.labelTitleForum.Size = new System.Drawing.Size(312, 26);
             this.labelTitleForum.TabIndex = 0;
@@ -687,58 +677,30 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.labelWriteQuestion);
+            this.tabPage1.Controls.Add(this.PostQuestion);
             this.tabPage1.Controls.Add(this.comboBoxCategory);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.labelChooseCategory);
             this.tabPage1.Controls.Add(this.labelTitlePostQuestion);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textBoxQuestion);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(801, 400);
             this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Post a question";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // PostQuestion
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 119);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(553, 134);
-            this.textBox1.TabIndex = 0;
-            // 
-            // labelTitlePostQuestion
-            // 
-            this.labelTitlePostQuestion.AutoSize = true;
-            this.labelTitlePostQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.labelTitlePostQuestion.Location = new System.Drawing.Point(256, 3);
-            this.labelTitlePostQuestion.Name = "labelTitlePostQuestion";
-            this.labelTitlePostQuestion.Size = new System.Drawing.Size(201, 31);
-            this.labelTitlePostQuestion.TabIndex = 1;
-            this.labelTitlePostQuestion.Text = "Post a question";
-            // 
-            // labelChooseCategory
-            // 
-            this.labelChooseCategory.AutoSize = true;
-            this.labelChooseCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelChooseCategory.Location = new System.Drawing.Point(20, 80);
-            this.labelChooseCategory.Name = "labelChooseCategory";
-            this.labelChooseCategory.Size = new System.Drawing.Size(139, 17);
-            this.labelChooseCategory.TabIndex = 3;
-            this.labelChooseCategory.Text = "Choose a category : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.label1.Location = new System.Drawing.Point(163, 256);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "*Note : You might write a question with at least 3 characters and maximum 1000 ch" +
-    "aracters";
+            this.PostQuestion.Location = new System.Drawing.Point(666, 313);
+            this.PostQuestion.Name = "PostQuestion";
+            this.PostQuestion.Size = new System.Drawing.Size(121, 38);
+            this.PostQuestion.TabIndex = 21;
+            this.PostQuestion.Text = "Post question";
+            this.PostQuestion.UseVisualStyleBackColor = true;
+            this.PostQuestion.Click += new System.EventHandler(this.PostQuestion_Click_1);
             // 
             // comboBoxCategory
             // 
@@ -761,14 +723,64 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(217, 21);
             this.comboBoxCategory.TabIndex = 20;
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 313);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 38);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Post question";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.label1.Location = new System.Drawing.Point(163, 264);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(376, 12);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "*Note : You might write a question with at least 3 characters and maximum 1000 ch" +
+    "aracters";
+            // 
+            // labelChooseCategory
+            // 
+            this.labelChooseCategory.AutoSize = true;
+            this.labelChooseCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelChooseCategory.Location = new System.Drawing.Point(20, 80);
+            this.labelChooseCategory.Name = "labelChooseCategory";
+            this.labelChooseCategory.Size = new System.Drawing.Size(139, 17);
+            this.labelChooseCategory.TabIndex = 3;
+            this.labelChooseCategory.Text = "Choose a category : ";
+            // 
+            // labelTitlePostQuestion
+            // 
+            this.labelTitlePostQuestion.AutoSize = true;
+            this.labelTitlePostQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.labelTitlePostQuestion.Location = new System.Drawing.Point(297, 13);
+            this.labelTitlePostQuestion.Name = "labelTitlePostQuestion";
+            this.labelTitlePostQuestion.Size = new System.Drawing.Size(201, 31);
+            this.labelTitlePostQuestion.TabIndex = 1;
+            this.labelTitlePostQuestion.Text = "Post a question";
+            // 
+            // textBoxQuestion
+            // 
+            this.textBoxQuestion.Location = new System.Drawing.Point(165, 127);
+            this.textBoxQuestion.Multiline = true;
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(553, 134);
+            this.textBoxQuestion.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(801, 400);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // labelWriteQuestion
+            // 
+            this.labelWriteQuestion.AutoSize = true;
+            this.labelWriteQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelWriteQuestion.Location = new System.Drawing.Point(20, 128);
+            this.labelWriteQuestion.Name = "labelWriteQuestion";
+            this.labelWriteQuestion.Size = new System.Drawing.Size(143, 17);
+            this.labelWriteQuestion.TabIndex = 22;
+            this.labelWriteQuestion.Text = "Write your question : ";
             // 
             // ITTraleeCK
             // 
@@ -777,7 +789,7 @@
             this.ClientSize = new System.Drawing.Size(802, 384);
             this.Controls.Add(this.TabControl);
             this.Name = "ITTraleeCK";
-            this.Text = "ITTraleeCK ";
+            this.Text = "ITTraleeCK Admin";
             this.VisibleChanged += new System.EventHandler(this.ITTraleeCK_VisibleChanged);
             this.TabControl.ResumeLayout(false);
             this.tabPageInformation.ResumeLayout(false);
@@ -839,8 +851,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelChooseCategory;
         private System.Windows.Forms.Label labelTitlePostQuestion;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxQuestion;
+        private System.Windows.Forms.Button PostQuestion;
         private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label labelWriteQuestion;
     }
 }

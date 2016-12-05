@@ -41,6 +41,7 @@ namespace ITTraleeCK
                     category.CategoryName = reader.GetString(1);
 
                     categories.Add(category);
+                   
                 }
             }
 

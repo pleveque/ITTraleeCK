@@ -60,9 +60,38 @@ namespace ITTraleeCK
             return questions;
         }
 
-        public static void CreateQuestion(/*?????????????*/)
+
+        /*
+         * Method to create member by calling procedure
+         * 
+         */
+        public static void CreateQuestion(int categoryID, string questionText)
         {
+            // checks to see if the database connection is not open
+            if (!DBConnection.IsOpen)
+            {
+                // opens the connection 
+                DBConnection.Open();
+            }
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = DBConnection.Connection;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            string strSQL = "CREATEQUESTION";
+
+            cmd.Parameters.Add("member_id", OracleDbType.Int32).Value = SessionUser.WhoIsLoggedIn().MemberID;
+            cmd.Parameters.Add("category_id", OracleDbType.Int32).Value = categoryID;
+            cmd.Parameters.Add("question_text", OracleDbType.Varchar2).Value = questionText;
+            
+            cmd.CommandText = strSQL;
+            cmd.ExecuteNonQuery();
+
+            DBConnection.Close();
 
         }
+
+       
+
     }
 }

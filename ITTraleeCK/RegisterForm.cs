@@ -16,6 +16,19 @@ namespace ITTraleeCK
         public RegisterForm()
         {
             InitializeComponent();
+            InitializeCategory();
+        }
+
+
+        public void InitializeCategory()
+        {
+            List<Category> categories = new List<Category>();
+            categories = DAOCategory.SelectAllCategories();
+
+            foreach (Category c in categories)
+            {
+                comboBoxCatKnowledge.Items.Add(c.CategoryName);
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -26,6 +39,10 @@ namespace ITTraleeCK
 
         }
 
+        /**
+         * Method to register a new member
+         * 
+         */ 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             string typeOfMember = "user";

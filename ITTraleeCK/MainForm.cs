@@ -15,13 +15,38 @@ namespace ITTraleeCK
         public ITTraleeCK()
         {
             InitializeComponent();
+            InitializeCategory();
         }
 
-       /*
-        * Method to display all information of the member who is connected
-        *
-        */
-       private void DisplayMemberConnected()
+        public void InitializeCategory()
+        {
+            List<Category> categoriesKnowledge = new List<Category>();
+            categoriesKnowledge = DAOCategory.SelectAllCategories();
+
+            comboBoxCatKnowledge.Items.Clear();
+            
+            foreach (Category c in categoriesKnowledge)
+            {
+                comboBoxCatKnowledge.Items.Add(c.CategoryName);
+            }
+
+            List<Category> categories = new List<Category>();
+            categories = DAOCategory.SelectAllCategories();
+
+            comboBoxCategory.Items.Clear();
+            comboBoxCategory.Items.Insert(0, "");
+
+            foreach (Category c in categories)
+            {
+                comboBoxCategory.Items.Insert(c.CategoryID, c.CategoryName);
+            }
+        }
+
+        /*
+         * Method to display all information of the member who is connected
+         *
+         */
+        private void DisplayMemberConnected()
         {
             Member member = new Member();
 
@@ -55,6 +80,13 @@ namespace ITTraleeCK
             Member member = new Member();
             string newsletter;
 
+            List<Category> categories = new List<Category>();
+
+            foreach (Category c in categories)
+            {
+                comboBoxCategory.Items.Add(c.CategoryName);
+            }
+
             if (checkBoxNewsletter.Checked) { newsletter = "y"; }
             else { newsletter = "f"; }
 
@@ -86,7 +118,7 @@ namespace ITTraleeCK
             List<Member> list = new List<Member>();
 
             listViewUsers.Items.Clear();
-
+            
             try
             {
                 list = DAOMember.SelectAllMembers();
@@ -141,18 +173,16 @@ namespace ITTraleeCK
             }
         }
         
+        /**
+         * Method to display all questions present in database
+         * 
+         */ 
         private void DisplayAllQuestions()
         {
             List<Question> list = new List<Question>();
 
             listViewQuestion.Items.Clear();
-
-            Button buttonAnswer = new Button();
-            this.Controls.Add(buttonAnswer);
-            buttonAnswer.Top = 75 * 23;
-            buttonAnswer.Text = "See Answer";
-
-
+            
             list = DAOQuestion.SelectAllQuestions();
 
             foreach (Question q in list)
@@ -161,10 +191,32 @@ namespace ITTraleeCK
                 item.SubItems.Add(q.QuestionText);
                 item.SubItems.Add(q.Category.CategoryName);
                 item.SubItems.Add(q.QuestionDate.ToString());
-                item.SubItems.Add(buttonAnswer.);
-
 
                 listViewQuestion.Items.Add(item);
+            }
+        }
+
+        private void PostQuestion_Click_1(object sender, EventArgs e)
+        {
+            if (comboBoxCategory.Equals("") || textBoxQuestion.Text != null)
+            {
+                try
+                {
+                    DAOQuestion.CreateQuestion(comboBoxCategory.SelectedIndex, textBoxQuestion.Text);
+
+                    MessageBox.Show("Question posted");
+
+                    comboBoxCategory.Text = "";
+                    textBoxQuestion.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Your can't post empty question");
             }
         }
     }

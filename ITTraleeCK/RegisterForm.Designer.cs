@@ -176,19 +176,6 @@
             // comboBoxCatKnowledge
             // 
             this.comboBoxCatKnowledge.FormattingEnabled = true;
-            this.comboBoxCatKnowledge.Items.AddRange(new object[] {
-            "Creative Media",
-            "Computing",
-            "Business",
-            "Tourism",
-            "Agricultural Engineering",
-            "Civil Engineering",
-            "Construction Studies",
-            "Biological Studies",
-            "Pharmaceutical Studies",
-            "Nursing",
-            "Social Sciences",
-            "Health and Leisure Studies"});
             this.comboBoxCatKnowledge.Location = new System.Drawing.Point(32, 288);
             this.comboBoxCatKnowledge.Name = "comboBoxCatKnowledge";
             this.comboBoxCatKnowledge.Size = new System.Drawing.Size(167, 21);

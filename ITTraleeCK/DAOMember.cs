@@ -102,11 +102,8 @@ namespace ITTraleeCK
 
                 cmd.CommandText = strSQL;
                 cmd.ExecuteNonQuery();
-                
-                //Console.WriteLine(cmd.)
 
                 DBConnection.Close();
-            
         }
 
 
