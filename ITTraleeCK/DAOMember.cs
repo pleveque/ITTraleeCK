@@ -10,7 +10,11 @@ namespace ITTraleeCK
 {
     class DAOMember
     {
-
+        /**
+         * Method to login a member
+         * pass in arguments the username and the password enter by the user
+         * return boolean to said if the user is login or not
+         */ 
         public static bool Login(string username, string password)
         {
             Member member = new Member();
@@ -39,6 +43,7 @@ namespace ITTraleeCK
                 {
                     foundMember = true;
 
+                    //for each row, read the value of column in the table member
                     while (reader != null && reader.Read())
                     {
                         member.MemberID = reader.GetInt32(0);
@@ -53,6 +58,7 @@ namespace ITTraleeCK
                         member.TypeOfMember = reader.GetString(9);
                     }
 
+                    //Create session for the member
                     SessionUser.LogOn(member);
 
                 }
@@ -73,6 +79,7 @@ namespace ITTraleeCK
 
         /*
          * Method to create member by calling procedure
+         * pass in arguments all informations of member
          * 
          */
         public static void CreateMember(string username, string password, int age, string email, string gender, string nationality, string categoryOfKnowledge, string newsletter, string typeOfMember)
@@ -86,10 +93,13 @@ namespace ITTraleeCK
 
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = DBConnection.Connection;
+
+                //Indicate the name of procedure
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 string strSQL = "CREATEMEMBER";
 
+                //Pass attributes required to run the procedure
                 cmd.Parameters.Add("username", OracleDbType.Varchar2).Value = username;
                 cmd.Parameters.Add("password", OracleDbType.Varchar2).Value = password;
                 cmd.Parameters.Add("age", OracleDbType.Int32).Value = age;
@@ -106,7 +116,10 @@ namespace ITTraleeCK
                 DBConnection.Close();
         }
 
-
+        /**
+         * Method to select all members in the database
+         * return list of members
+         */ 
         public static List<Member> SelectAllMembers()
         {
             List<Member> members = new List<Member>();
@@ -159,6 +172,10 @@ namespace ITTraleeCK
             return members; 
         }
 
+        /**
+         * Method to select the member who is connected thank's to his session
+         * return the member
+         */
         public static Member SelectMemberConnected()
         {
             Member member = new Member();
@@ -172,6 +189,7 @@ namespace ITTraleeCK
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
 
+            //Query to select username of the member connected
             string cmdText = @"SELECT * FROM MEMBER WHERE USERNAME ='" + SessionUser.WhoIsLoggedIn().Username + "'";
             cmd.CommandText = cmdText;
 
@@ -204,6 +222,10 @@ namespace ITTraleeCK
             return member;
         }
 
+        /**
+         * Method to update the member connected
+         * pass in arguments all informations necessary to update a member
+         */
         public static void UpdateMemberConnected(string username, string password, int age, string email, string gender, string nationality, string categoryOfKnowledge, string typeOfMember, string newsletter)
         {
             if (!DBConnection.IsOpen)

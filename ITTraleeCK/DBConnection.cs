@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace ITTraleeCK
 {
+    /**
+     * Class to connect my project in my database
+     * If you use a database, please change the string queryConn with you own informations
+     */
     class DBConnection
     {
         private static bool isOpen;
-        //private static string queryConn = "DATA SOURCE=studentoracle.students.ittralee.ie:1521/orcl;PERSIST SECURITY INFO=True;USER ID=T00191900;PASSWORD=sxauet79";
         private static string queryConn = "DATA SOURCE=localhost:1521/xe;USER ID=PIERRE;PASSWORD=pierre";
 
 
@@ -43,8 +46,6 @@ namespace ITTraleeCK
 
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message, "Open Connection doesn't works");
-
                 isOpen = false;
             }
         }
@@ -64,5 +65,4 @@ namespace ITTraleeCK
             }
         }
     }
-
 }

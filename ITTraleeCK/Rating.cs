@@ -9,8 +9,8 @@ namespace ITTraleeCK
     class Rating
     {
         private int ratingID;
-        private Question questionID;
-        private Answer answerID;
+        private Question question;
+        private Answer answer;
         private int rating;
 
         public int RatingID
@@ -24,26 +24,26 @@ namespace ITTraleeCK
                 ratingID = value;
             }
         }
-        public Question QuestionID
+        public Question Question
         {
             get
             {
-                return questionID;
+                return question;
             }
             set
             {
-                questionID = value;
+                question = value;
             }
         }
-        public Answer AnswerID
+        public Answer Answer
         {
             get
             {
-                return answerID;
+                return answer;
             }
             set
             {
-                answerID = value;
+                answer = value;
             }
         }
 
@@ -58,6 +58,12 @@ namespace ITTraleeCK
                 rating = value;
             }
         }
-
+        public string ToString()
+        {
+            return "Rating id : " + RatingID +
+                   "Question name : " + Question.QuestionText +
+                   "Answer text : " + Answer.AnswerText +
+                   "Rating : " + RatingMark;
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace ITTraleeCK
 {
     class Member
     {
-
         private int memberID;
         private string username;
         private string memberPassword;
@@ -146,6 +145,5 @@ namespace ITTraleeCK
                 " newsletter : " + this.newsletter + 
                 " type of member : " + this.typeOfMember;
         }
-
     }
 }

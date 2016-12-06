@@ -69,5 +69,13 @@ namespace ITTraleeCK
                 answerDate = value;
             }
         }
+        public string ToString()
+        {
+            return "Answer ID : " + this.AnswerID +
+                   "Question Name : " + this.Question.QuestionText +
+                   "Member username : " + this.Member.Username +
+                   "Answer text : " + this.answerText +
+                   "Answer date : " + this.AnswerDate.ToString();
+        }
     }
 }

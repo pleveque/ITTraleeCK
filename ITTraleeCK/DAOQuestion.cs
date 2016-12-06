@@ -10,7 +10,10 @@ namespace ITTraleeCK
 {
     class DAOQuestion
     {
-
+        /**
+         * Method to select all questions in database
+         * return a list of question
+         */ 
         public static List<Question> SelectAllQuestions()
         {
             List<Question> questions = new List<Question>();
@@ -64,6 +67,7 @@ namespace ITTraleeCK
 
         /*
          * Method to create question by calling procedure
+         * pass in arguments the ID of category and the text of the question
          * 
          */
         public static void CreateQuestion(int categoryID, string questionText)
@@ -94,7 +98,7 @@ namespace ITTraleeCK
 
         /**
          * Method to delete a question
-         * 
+         * pass in argument the text of the question
          */
        public static void DeleteQuestion(string questionText)
         {
@@ -124,6 +128,5 @@ namespace ITTraleeCK
 
             DBConnection.Close();
         }
-
     }
 }

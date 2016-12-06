@@ -11,6 +11,11 @@ namespace ITTraleeCK
     class DAOAnswer
     {
 
+        /*
+         * Method to select all answer present in database
+         * return a list of answer
+         * 
+         */ 
         public static List<Answer> SelectAllAnswers()
         {
             List<Answer> answers = new List<Answer>();
@@ -24,6 +29,7 @@ namespace ITTraleeCK
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
 
+            //Query to select username of member, question text the answer text and the date of answer with the sames ID
             string cmdText = @"SELECT m.USERNAME, q.QUESTION_TEXT, a.ANSWER_TEXT, a.ANSWER_DATE FROM ANSWER a JOIN Question q on q.QUESTION_ID = a.QUESTION_ID JOIN MEMBER m on m.MEMBER_ID = a.MEMBER_ID ORDER BY a.ANSWER_DATE DESC";
 
             cmd.CommandText = cmdText;
@@ -40,6 +46,8 @@ namespace ITTraleeCK
                     Member member = new Member();
                     Question question = new Question();
 
+                    //Get member in class answer takes the value of member
+                    //Is the same for question
                     answer.Member = member;
                     answer.Question = question;
 
@@ -63,6 +71,7 @@ namespace ITTraleeCK
 
         /*
          * Method to create answer by calling procedure
+         * pass in arguments the id of question and the answer text
          * 
          */
         public static void CreateAnswer(int questionID, string answerText)
@@ -76,10 +85,14 @@ namespace ITTraleeCK
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
+
+            //Indicate that is a procedure stored
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+            //Indicate the name of procedure
             string strSQL = "CREATEANSWER";
-
+            
+            //Pass attributes required to run the procedure
             cmd.Parameters.Add("question_id", OracleDbType.Int32).Value = questionID;
             cmd.Parameters.Add("member_id", OracleDbType.Int32).Value = SessionUser.WhoIsLoggedIn().MemberID;
             cmd.Parameters.Add("question_text", OracleDbType.Varchar2).Value = answerText;
@@ -90,6 +103,11 @@ namespace ITTraleeCK
             DBConnection.Close();
         }
 
+        /**
+         * Method to delete an answer
+         * pass in argument the text of answer
+         * 
+         */ 
         public static void DeleteAnswer(string answerText)
         {
             if (!DBConnection.IsOpen)

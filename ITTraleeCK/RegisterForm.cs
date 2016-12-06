@@ -19,7 +19,9 @@ namespace ITTraleeCK
             InitializeCategory();
         }
 
-
+        /*
+         * Method is called when the application is loaded
+         */ 
         public void InitializeCategory()
         {
             List<Category> categories = new List<Category>();
@@ -27,10 +29,14 @@ namespace ITTraleeCK
 
             foreach (Category c in categories)
             {
+                //Fill the combobox with the name of category
                 comboBoxCatKnowledge.Items.Add(c.CategoryName);
             }
         }
-
+        
+        /**
+         * Return in the login form
+         */ 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
@@ -40,11 +46,12 @@ namespace ITTraleeCK
         }
 
         /**
-         * Method to register a new member
+         * Method to register a new member in database
          * 
          */ 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+            //The type of member is per default "user"
             string typeOfMember = "user";
             string newsletter;
 

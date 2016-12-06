@@ -9,7 +9,11 @@ namespace ITTraleeCK
 {
     class DAOCategory
     {
-
+        /**
+         * Method to select all category present in database
+         * return list of category
+         * 
+         */ 
         public static List<Category> SelectAllCategories()
         {
             List<Category> categories = new List<Category>();
@@ -41,7 +45,6 @@ namespace ITTraleeCK
                     category.CategoryName = reader.GetString(1);
 
                     categories.Add(category);
-                   
                 }
             }
 

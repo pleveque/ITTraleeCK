@@ -69,5 +69,13 @@ namespace ITTraleeCK
                 questionDate = value;
             }
         }
+        public string ToString()
+        {
+            return "Question ID : " + this.QuestionID +
+                   "Member username : " + this.Member.Username +
+                   "Category name : " + this.Category.CategoryName + 
+                   "Question text : " + this.QuestionText +
+                   "Question date : " + this.QuestionDate.ToString();
+        }
     }
 }

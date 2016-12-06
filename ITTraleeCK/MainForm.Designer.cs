@@ -912,6 +912,7 @@
             this.textBoxAnswerDelete.Name = "textBoxAnswerDelete";
             this.textBoxAnswerDelete.Size = new System.Drawing.Size(116, 20);
             this.textBoxAnswerDelete.TabIndex = 8;
+            this.textBoxAnswerDelete.Visible = false;
             // 
             // DeleteAnswer
             // 

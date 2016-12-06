@@ -38,6 +38,5 @@ namespace ITTraleeCK
         {
             return "Category ID : " + this.CategoryID + " Category Name : " + this.CategoryName;
         }
-
     }
 }
