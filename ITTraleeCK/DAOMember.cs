@@ -231,7 +231,6 @@ namespace ITTraleeCK
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Saved successfully");
             }
             catch (Exception ex)
             {

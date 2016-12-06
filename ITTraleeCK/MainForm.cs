@@ -70,47 +70,9 @@ namespace ITTraleeCK
                 checkBoxNewsletter.CheckState = CheckState.Unchecked;
             }
         }
-
+        
         /*
-         * Method to update information of user when the user click on "save" button
-         * 
-        */
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            Member member = new Member();
-            string newsletter;
-
-            List<Category> categories = new List<Category>();
-
-            foreach (Category c in categories)
-            {
-                comboBoxCategory.Items.Add(c.CategoryName);
-            }
-
-            if (checkBoxNewsletter.Checked) { newsletter = "y"; }
-            else { newsletter = "f"; }
-
-            try
-            {
-                DAOMember.UpdateMemberConnected(label2Username.Text,
-                textBoxPassword.Text,
-                int.Parse(textBoxAge.Text),
-                textBoxEmail.Text,
-                comboBoxGender.Text,
-                comboBoxNationality.Text,
-                comboBoxCatKnowledge.Text,
-                label2TypeOfMember.Text,
-                newsletter);
-            }
-            catch
-            {
-                MessageBox.Show("Impossible to save your changing");
-            }
-        }
-
-
-        /*
-         * Method to display all member present in the application
+         * Method to display all members present in the application
          * 
         */
         private void DisplayAllMembers()
@@ -118,7 +80,7 @@ namespace ITTraleeCK
             List<Member> list = new List<Member>();
 
             listViewUsers.Items.Clear();
-            
+
             try
             {
                 list = DAOMember.SelectAllMembers();
@@ -143,6 +105,70 @@ namespace ITTraleeCK
                 MessageBox.Show("There is not any users register in the application");
             }
         }
+
+        /**
+         * Method to display all questions present in database
+         * 
+         */
+        private void DisplayAllQuestions()
+        {
+            List<Question> list = new List<Question>();
+
+            listViewQuestion.Items.Clear();
+
+            list = DAOQuestion.SelectAllQuestions();
+
+            foreach (Question q in list)
+            {
+                ListViewItem item = new ListViewItem(q.Member.Username);
+                item.SubItems.Add(q.QuestionText);
+                item.SubItems.Add(q.Category.CategoryName);
+                item.SubItems.Add(q.QuestionDate.ToString());
+
+                listViewQuestion.Items.Add(item);
+            }
+        }
+
+        /*
+         * Method to update information of user when the user click on "save" button
+         * 
+        */
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            Member member = new Member();
+            string newsletter;
+
+            List<Category> categories = new List<Category>();
+
+            foreach (Category c in categories)
+            {
+                comboBoxCategory.Items.Add(c.CategoryName);
+            }
+
+            if (checkBoxNewsletter.Checked) { newsletter = "y"; }
+            else { newsletter = "f"; }
+
+            try
+            {
+                DAOMember.UpdateMemberConnected(label2Username.Text,
+                                                textBoxPassword.Text,
+                                                int.Parse(textBoxAge.Text),
+                                                textBoxEmail.Text,
+                                                comboBoxGender.Text,
+                                                comboBoxNationality.Text,
+                                                comboBoxCatKnowledge.Text,
+                                                label2TypeOfMember.Text,
+                                                newsletter);
+
+                MessageBox.Show("Saved successfully");
+
+            }
+            catch
+            {
+                MessageBox.Show("Impossible to save your changing");
+            }
+        }
+        
 
         /*
          * When the load of the main form (after login)
@@ -173,29 +199,7 @@ namespace ITTraleeCK
             }
         }
         
-        /**
-         * Method to display all questions present in database
-         * 
-         */ 
-        private void DisplayAllQuestions()
-        {
-            List<Question> list = new List<Question>();
-
-            listViewQuestion.Items.Clear();
-            
-            list = DAOQuestion.SelectAllQuestions();
-
-            foreach (Question q in list)
-            {
-                ListViewItem item = new ListViewItem(q.Member.Username);
-                item.SubItems.Add(q.QuestionText);
-                item.SubItems.Add(q.Category.CategoryName);
-                item.SubItems.Add(q.QuestionDate.ToString());
-
-                listViewQuestion.Items.Add(item);
-            }
-        }
-
+        
         private void PostQuestion_Click_1(object sender, EventArgs e)
         {
             if (comboBoxCategory.Equals("") || textBoxQuestion.Text != null)
@@ -218,6 +222,28 @@ namespace ITTraleeCK
             {
                 MessageBox.Show("Your can't post empty question");
             }
+        }
+
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("You will delete a question. Are you sure you want to continue ?", "DELETE A QUESTION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    DAOQuestion.DeleteQuestion(textBoxUsername.Text);
+                    DisplayAllQuestions();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void listViewQuestion_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxUsername.Text = listViewQuestion.SelectedItems[0].SubItems[1].Text;
         }
     }
 }

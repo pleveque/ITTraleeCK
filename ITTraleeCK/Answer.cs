@@ -9,10 +9,10 @@ namespace ITTraleeCK
     class Answer
     {
         private int answerID;
-        private Question questionID;
-        private Member memberID;
+        private Question question;
+        private Member member;
         private string answerText;
-        private string answerDate;
+        private DateTime answerDate;
 
         public int AnswerID
         {
@@ -25,26 +25,26 @@ namespace ITTraleeCK
                 answerID = value;
             }
         }
-        public Question QuestionID
+        public Question Question
         {
             get
             {
-                return questionID;
+                return question;
             }
             set
             {
-                questionID = value;
+                question = value;
             }
         }
-        public Member MemberID
+        public Member Member
         {
             get
             {
-                return memberID;
+                return member;
             }
             set
             {
-                memberID = value;
+                member = value;
             }
         }
         public string AnswerText
@@ -58,7 +58,7 @@ namespace ITTraleeCK
                 answerText = value;
             }
         }
-        public string AnswerDate
+        public DateTime AnswerDate
         {
             get
             {

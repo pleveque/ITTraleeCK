@@ -79,6 +79,8 @@
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.labelWriteQuestion = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.TabControl.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
@@ -594,6 +596,8 @@
             // 
             // tabPageForum
             // 
+            this.tabPageForum.Controls.Add(this.textBoxUsername);
+            this.tabPageForum.Controls.Add(this.buttonDelete);
             this.tabPageForum.Controls.Add(this.listViewQuestion);
             this.tabPageForum.Controls.Add(this.comboBox1);
             this.tabPageForum.Controls.Add(this.labelSortedBy);
@@ -616,12 +620,13 @@
             this.columnAnswer});
             this.listViewQuestion.FullRowSelect = true;
             this.listViewQuestion.GridLines = true;
-            this.listViewQuestion.Location = new System.Drawing.Point(36, 105);
+            this.listViewQuestion.Location = new System.Drawing.Point(36, 99);
             this.listViewQuestion.Name = "listViewQuestion";
-            this.listViewQuestion.Size = new System.Drawing.Size(576, 230);
+            this.listViewQuestion.Size = new System.Drawing.Size(578, 230);
             this.listViewQuestion.TabIndex = 4;
             this.listViewQuestion.UseCompatibleStateImageBehavior = false;
             this.listViewQuestion.View = System.Windows.Forms.View.Details;
+            this.listViewQuestion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewQuestion_MouseClick);
             // 
             // columnAuthor
             // 
@@ -646,7 +651,7 @@
             // columnAnswer
             // 
             this.columnAnswer.Text = "Answer";
-            this.columnAnswer.Width = 95;
+            this.columnAnswer.Width = 99;
             // 
             // comboBox1
             // 
@@ -782,6 +787,24 @@
             this.labelWriteQuestion.TabIndex = 22;
             this.labelWriteQuestion.Text = "Write your question : ";
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(667, 294);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(87, 35);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.Location = new System.Drawing.Point(634, 254);
+            this.textBoxUsername.Multiline = true;
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(153, 21);
+            this.textBoxUsername.TabIndex = 6;
+            // 
             // ITTraleeCK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -856,5 +879,7 @@
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label labelWriteQuestion;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.TextBox textBoxUsername;
     }
 }

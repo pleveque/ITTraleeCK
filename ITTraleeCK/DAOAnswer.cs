@@ -13,9 +13,7 @@ namespace ITTraleeCK
         public static List<Answer> SelectAllAnswers()
         {
             List<Answer> answers = new List<Answer>();
-            Answer answer = new Answer();
-
-
+            
             if (!DBConnection.IsOpen)
             {
                 // opens the connection 
@@ -25,7 +23,7 @@ namespace ITTraleeCK
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
 
-            string cmdText = @"SELECT * FROM ""ANSWER""";
+            string cmdText = @"SELECT * FROM ANSWER";
 
             cmd.CommandText = cmdText;
 
@@ -34,6 +32,24 @@ namespace ITTraleeCK
             try
             {
                 reader = cmd.ExecuteReader();
+
+                while (reader != null && reader.Read())
+                {
+                    Answer answer = new Answer();
+                    Member member = new Member();
+                    Question question = new Question();
+
+                    answer.Member = member;
+                    answer.Question = question;
+
+                    answer.AnswerID = reader.GetInt32(0);
+                    answer.Question.QuestionID = reader.GetInt32(1);
+                    answer.Member.MemberID = reader.GetInt32(2);
+                    answer.AnswerText = reader.GetString(3);
+                    answer.AnswerDate = reader.GetDateTime(4);
+
+                    answers.Add(answer);
+                }
             }
 
             catch
@@ -41,24 +57,6 @@ namespace ITTraleeCK
                 throw;
             }
 
-          /*  while (reader != null && reader.Read())
-            {
-                answer.AnswerID = reader.GetInt32(0);
-                answer.QuestionID = Convert.ToInt32(reader.GetValue(1));
-                answer.MemberID = Convert.ToInt32(reader.GetValue(2));
-                answer.AnswerText = reader.GetString(3);
-                answer.AnswerDate = Convert.ToString(reader.GetValue(4));
-
-                
-
-                answers.Add(answer);
-
-                foreach (Answer c in answers)
-                {
-                    Console.WriteLine("liste DAO : " + c.ToString());
-                }
-
-            }*/
 
             return answers.ToList<Answer>();
         }
