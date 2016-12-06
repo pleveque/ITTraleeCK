@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ITTraleeCK
 {
@@ -23,7 +24,7 @@ namespace ITTraleeCK
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
 
-            string cmdText = @"SELECT * FROM ANSWER";
+            string cmdText = @"SELECT m.USERNAME, q.QUESTION_TEXT, a.ANSWER_TEXT, a.ANSWER_DATE FROM ANSWER a JOIN Question q on q.QUESTION_ID = a.QUESTION_ID JOIN MEMBER m on m.MEMBER_ID = a.MEMBER_ID ORDER BY a.ANSWER_DATE DESC";
 
             cmd.CommandText = cmdText;
 
@@ -42,24 +43,54 @@ namespace ITTraleeCK
                     answer.Member = member;
                     answer.Question = question;
 
-                    answer.AnswerID = reader.GetInt32(0);
-                    answer.Question.QuestionID = reader.GetInt32(1);
-                    answer.Member.MemberID = reader.GetInt32(2);
-                    answer.AnswerText = reader.GetString(3);
-                    answer.AnswerDate = reader.GetDateTime(4);
+                    answer.Member.Username = reader.GetString(0);
+                    answer.Question.QuestionText = reader.GetString(1);
+                    answer.AnswerText = reader.GetString(2);
+                    answer.AnswerDate = reader.GetDateTime(3);
 
                     answers.Add(answer);
                 }
             }
 
-            catch
+            catch(Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
 
-
-            return answers.ToList<Answer>();
+            return answers;
         }
+
+
+        /*
+         * Method to create answer by calling procedure
+         * 
+         */
+        public static void CreateAnswer(int questionID, string answerText)
+        {
+            // checks to see if the database connection is not open
+            if (!DBConnection.IsOpen)
+            {
+                // opens the connection 
+                DBConnection.Open();
+            }
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = DBConnection.Connection;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            string strSQL = "CREATEANSWER";
+
+            cmd.Parameters.Add("question_id", OracleDbType.Int32).Value = questionID;
+            cmd.Parameters.Add("member_id", OracleDbType.Int32).Value = SessionUser.WhoIsLoggedIn().MemberID;
+            cmd.Parameters.Add("question_text", OracleDbType.Varchar2).Value = answerText;
+
+            cmd.CommandText = strSQL;
+            cmd.ExecuteNonQuery();
+
+            DBConnection.Close();
+        }
+
+    
 
     }
 }

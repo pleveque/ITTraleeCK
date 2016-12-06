@@ -63,7 +63,7 @@ namespace ITTraleeCK
 
 
         /*
-         * Method to create member by calling procedure
+         * Method to create question by calling procedure
          * 
          */
         public static void CreateQuestion(int categoryID, string questionText)

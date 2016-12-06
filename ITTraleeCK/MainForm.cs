@@ -16,6 +16,7 @@ namespace ITTraleeCK
         {
             InitializeComponent();
             InitializeCategory();
+            InitializeQuestions();
         }
 
         public void InitializeCategory()
@@ -40,6 +41,21 @@ namespace ITTraleeCK
             {
                 comboBoxCategory.Items.Insert(c.CategoryID, c.CategoryName);
             }
+        }
+
+        public void InitializeQuestions()
+        {
+            List<Question> questions = new List<Question>();
+            questions = DAOQuestion.SelectAllQuestions();
+
+            comboBoxQuestions.Items.Clear();
+            comboBoxQuestions.Items.Insert(0, "");
+
+            foreach (Question q in questions)
+            {
+                comboBoxQuestions.Items.Insert(q.QuestionID, q.QuestionText);
+            }
+
         }
 
         /*
@@ -129,6 +145,24 @@ namespace ITTraleeCK
             }
         }
 
+        public void DisplayAllAnswers()
+        {
+            List<Answer> answers = new List<Answer>();
+            listViewAnswers.Items.Clear();
+
+            answers = DAOAnswer.SelectAllAnswers();
+
+            foreach(Answer a in answers)
+            {
+                ListViewItem item = new ListViewItem(a.Member.Username);
+                item.SubItems.Add(a.Question.QuestionText);
+                item.SubItems.Add(a.AnswerText);
+                item.SubItems.Add(a.AnswerDate.ToString());
+
+                listViewAnswers.Items.Add(item);
+            }
+        }
+
         /*
          * Method to update information of user when the user click on "save" button
          * 
@@ -196,6 +230,16 @@ namespace ITTraleeCK
                 case 2:
                     DisplayAllQuestions();
                     break;
+                case 3:
+                    InitializeCategory();
+                    break;
+                case 4:
+                    InitializeQuestions();
+                    break;
+                case 5:
+                    DisplayAllAnswers();
+                    break;
+                    
             }
         }
         
@@ -246,5 +290,28 @@ namespace ITTraleeCK
             textBoxUsername.Text = listViewQuestion.SelectedItems[0].SubItems[1].Text;
         }
 
+        private void buttonPostAnswer_Click(object sender, EventArgs e)
+        {
+            if (comboBoxQuestions.Equals("") || textBoxAnswer.Text != null)
+            {
+                try
+                {
+                    DAOAnswer.CreateAnswer(comboBoxQuestions.SelectedIndex, textBoxAnswer.Text);
+
+                    MessageBox.Show("Answer posted");
+
+                    comboBoxQuestions.Text = "";
+                    textBoxAnswer.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Your can't post empty Answer");
+            }
+        }
     }
 }
