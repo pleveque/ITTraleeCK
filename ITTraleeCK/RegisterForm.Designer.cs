@@ -48,62 +48,69 @@
             this.checkBoxNewsletter = new System.Windows.Forms.CheckBox();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.Location = new System.Drawing.Point(31, 55);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(55, 13);
+            this.labelUsername.Size = new System.Drawing.Size(85, 16);
             this.labelUsername.TabIndex = 0;
-            this.labelUsername.Text = "Username";
+            this.labelUsername.Text = "Username : *";
             this.labelUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LabelPassword
             // 
             this.LabelPassword.AutoSize = true;
-            this.LabelPassword.Location = new System.Drawing.Point(31, 133);
+            this.LabelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPassword.Location = new System.Drawing.Point(31, 113);
             this.LabelPassword.Name = "LabelPassword";
-            this.LabelPassword.Size = new System.Drawing.Size(53, 13);
+            this.LabelPassword.Size = new System.Drawing.Size(82, 16);
             this.LabelPassword.TabIndex = 1;
-            this.LabelPassword.Text = "Password";
+            this.LabelPassword.Text = "Password : *";
             // 
             // Age
             // 
             this.Age.AutoSize = true;
+            this.Age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Age.Location = new System.Drawing.Point(290, 53);
             this.Age.Name = "Age";
-            this.Age.Size = new System.Drawing.Size(26, 13);
+            this.Age.Size = new System.Drawing.Size(47, 16);
             this.Age.TabIndex = 2;
-            this.Age.Text = "Age";
+            this.Age.Text = "Age : *";
             // 
             // LabelConfirmPassword
             // 
             this.LabelConfirmPassword.AutoSize = true;
-            this.LabelConfirmPassword.Location = new System.Drawing.Point(290, 132);
+            this.LabelConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelConfirmPassword.Location = new System.Drawing.Point(290, 113);
             this.LabelConfirmPassword.Name = "LabelConfirmPassword";
-            this.LabelConfirmPassword.Size = new System.Drawing.Size(91, 13);
+            this.LabelConfirmPassword.Size = new System.Drawing.Size(130, 16);
             this.LabelConfirmPassword.TabIndex = 3;
-            this.LabelConfirmPassword.Text = "Confirm Password";
+            this.LabelConfirmPassword.Text = "Confirm Password : *";
             // 
             // labelGender
             // 
             this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(29, 197);
+            this.labelGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGender.Location = new System.Drawing.Point(31, 185);
             this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(42, 13);
+            this.labelGender.Size = new System.Drawing.Size(67, 16);
             this.labelGender.TabIndex = 4;
-            this.labelGender.Text = "Gender";
+            this.labelGender.Text = "Gender : *";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(290, 207);
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(290, 187);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(32, 13);
+            this.labelEmail.Size = new System.Drawing.Size(56, 16);
             this.labelEmail.TabIndex = 5;
-            this.labelEmail.Text = "Email";
+            this.labelEmail.Text = "Email : *";
             // 
             // textBoxUsername
             // 
@@ -114,69 +121,78 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(32, 149);
+            this.textBoxPassword.Location = new System.Drawing.Point(32, 129);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(167, 20);
             this.textBoxPassword.TabIndex = 10;
             // 
             // textBoxConfirmPassword
             // 
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(293, 148);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(293, 128);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(163, 20);
             this.textBoxConfirmPassword.TabIndex = 11;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(293, 223);
+            this.textBoxEmail.Location = new System.Drawing.Point(293, 203);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(163, 20);
             this.textBoxEmail.TabIndex = 14;
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(417, 372);
+            this.buttonRegister.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegister.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonRegister.Location = new System.Drawing.Point(407, 370);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(75, 23);
+            this.buttonRegister.Size = new System.Drawing.Size(86, 38);
             this.buttonRegister.TabIndex = 15;
             this.buttonRegister.Text = "Register";
-            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(4, 372);
+            this.buttonCancel.BackColor = System.Drawing.Color.Maroon;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonCancel.Location = new System.Drawing.Point(12, 370);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(86, 38);
             this.buttonCancel.TabIndex = 16;
             this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelRegisterTitle
             // 
             this.labelRegisterTitle.AutoSize = true;
-            this.labelRegisterTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.labelRegisterTitle.Location = new System.Drawing.Point(197, 9);
+            this.labelRegisterTitle.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterTitle.Location = new System.Drawing.Point(206, 9);
             this.labelRegisterTitle.MinimumSize = new System.Drawing.Size(12, 12);
             this.labelRegisterTitle.Name = "labelRegisterTitle";
-            this.labelRegisterTitle.Size = new System.Drawing.Size(77, 22);
+            this.labelRegisterTitle.Size = new System.Drawing.Size(88, 25);
             this.labelRegisterTitle.TabIndex = 17;
             this.labelRegisterTitle.Text = "Register";
             // 
             // labelCatKnowledge
             // 
             this.labelCatKnowledge.AutoSize = true;
-            this.labelCatKnowledge.Location = new System.Drawing.Point(29, 272);
+            this.labelCatKnowledge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCatKnowledge.Location = new System.Drawing.Point(29, 252);
             this.labelCatKnowledge.Name = "labelCatKnowledge";
-            this.labelCatKnowledge.Size = new System.Drawing.Size(117, 13);
+            this.labelCatKnowledge.Size = new System.Drawing.Size(161, 16);
             this.labelCatKnowledge.TabIndex = 18;
-            this.labelCatKnowledge.Text = "Category of Knowledge";
+            this.labelCatKnowledge.Text = "Category of Knowledge : *";
             // 
             // comboBoxCatKnowledge
             // 
             this.comboBoxCatKnowledge.FormattingEnabled = true;
-            this.comboBoxCatKnowledge.Location = new System.Drawing.Point(32, 288);
+            this.comboBoxCatKnowledge.Location = new System.Drawing.Point(32, 268);
             this.comboBoxCatKnowledge.Name = "comboBoxCatKnowledge";
             this.comboBoxCatKnowledge.Size = new System.Drawing.Size(167, 21);
             this.comboBoxCatKnowledge.TabIndex = 19;
@@ -184,11 +200,12 @@
             // labelNationality
             // 
             this.labelNationality.AutoSize = true;
-            this.labelNationality.Location = new System.Drawing.Point(290, 272);
+            this.labelNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNationality.Location = new System.Drawing.Point(290, 252);
             this.labelNationality.Name = "labelNationality";
-            this.labelNationality.Size = new System.Drawing.Size(56, 13);
+            this.labelNationality.Size = new System.Drawing.Size(85, 16);
             this.labelNationality.TabIndex = 20;
-            this.labelNationality.Text = "Nationality";
+            this.labelNationality.Text = "Nationality : *";
             // 
             // comboBoxNationality
             // 
@@ -411,7 +428,7 @@
             "Yougoslavie  ",
             "Zambie  ",
             "Zimbabwe"});
-            this.comboBoxNationality.Location = new System.Drawing.Point(293, 288);
+            this.comboBoxNationality.Location = new System.Drawing.Point(293, 268);
             this.comboBoxNationality.Name = "comboBoxNationality";
             this.comboBoxNationality.Size = new System.Drawing.Size(167, 21);
             this.comboBoxNationality.TabIndex = 21;
@@ -419,9 +436,10 @@
             // checkBoxNewsletter
             // 
             this.checkBoxNewsletter.AutoSize = true;
-            this.checkBoxNewsletter.Location = new System.Drawing.Point(211, 340);
+            this.checkBoxNewsletter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNewsletter.Location = new System.Drawing.Point(201, 318);
             this.checkBoxNewsletter.Name = "checkBoxNewsletter";
-            this.checkBoxNewsletter.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxNewsletter.Size = new System.Drawing.Size(84, 19);
             this.checkBoxNewsletter.TabIndex = 22;
             this.checkBoxNewsletter.Text = "Newsletter";
             this.checkBoxNewsletter.UseVisualStyleBackColor = true;
@@ -439,16 +457,28 @@
             this.comboBoxGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBoxGender.Location = new System.Drawing.Point(34, 221);
+            this.comboBoxGender.Location = new System.Drawing.Point(34, 201);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(165, 21);
             this.comboBoxGender.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(118, 354);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(257, 12);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "* : It\'s necessary to complete all informations with this symbol";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 407);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(504, 420);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxGender);
             this.Controls.Add(this.textBoxAge);
             this.Controls.Add(this.checkBoxNewsletter);
@@ -470,6 +500,7 @@
             this.Controls.Add(this.LabelPassword);
             this.Controls.Add(this.labelUsername);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -498,5 +529,6 @@
         private System.Windows.Forms.CheckBox checkBoxNewsletter;
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.Label label1;
     }
 }

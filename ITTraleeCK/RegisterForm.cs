@@ -80,6 +80,5 @@ namespace ITTraleeCK
                 MessageBox.Show("Your password isn't the same");
             }
         }
-
     }
 }

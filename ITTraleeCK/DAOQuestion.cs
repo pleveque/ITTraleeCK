@@ -24,7 +24,7 @@ namespace ITTraleeCK
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = DBConnection.Connection;
 
-            string sqlQuery = @"SELECT m.USERNAME, c.CATEGORY_NAME, q.QUESTION_TEXT, q.QUESTION_DATE FROM QUESTION q JOIN MEMBER m on q.MEMBER_ID = m.MEMBER_ID JOIN CATEGORY c on c.CATEGORY_id = q.CATEGORY_ID ORDER BY q.QUESTION_DATE DESC";
+            string sqlQuery = @"SELECT m.USERNAME, c.CATEGORY_NAME, q.QUESTION_TEXT, q.QUESTION_DATE FROM QUESTION q JOIN MEMBER m on q.MEMBER_ID = m.MEMBER_ID JOIN CATEGORY c on c.CATEGORY_ID = q.CATEGORY_ID ORDER BY q.QUESTION_DATE DESC";
             
             cmd.CommandText = sqlQuery;
 
@@ -39,6 +39,7 @@ namespace ITTraleeCK
                     Question question = new Question();
                     Member member = new Member();
                     Category category = new Category();
+                    Answer answer = new Answer();
                     question.Member = member;
                     question.Category = category;
 
