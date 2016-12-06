@@ -78,19 +78,21 @@
             this.labelTitlePostQuestion = new System.Windows.Forms.Label();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.tabPagePostAnswer = new System.Windows.Forms.TabPage();
-            this.comboBoxQuestions = new System.Windows.Forms.ComboBox();
-            this.textBoxAnswer = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonPostAnswer = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonPostAnswer = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxAnswer = new System.Windows.Forms.TextBox();
+            this.comboBoxQuestions = new System.Windows.Forms.ComboBox();
             this.Answers = new System.Windows.Forms.TabPage();
+            this.textBoxAnswerDelete = new System.Windows.Forms.TextBox();
+            this.DeleteAnswer = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.listViewAnswers = new System.Windows.Forms.ListView();
             this.columnAuthorAnswer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label6 = new System.Windows.Forms.Label();
-            this.columnQuestionText = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnAnswer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnQuestionText = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnAnswerDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TabControl.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
@@ -636,10 +638,10 @@
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(634, 70);
+            this.textBoxUsername.Location = new System.Drawing.Point(41, 21);
             this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(153, 21);
+            this.textBoxUsername.Size = new System.Drawing.Size(23, 10);
             this.textBoxUsername.TabIndex = 6;
             this.textBoxUsername.Visible = false;
             // 
@@ -648,7 +650,7 @@
             this.buttonDelete.BackColor = System.Drawing.Color.Brown;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonDelete.Location = new System.Drawing.Point(667, 294);
+            this.buttonDelete.Location = new System.Drawing.Point(698, 35);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(89, 42);
             this.buttonDelete.TabIndex = 5;
@@ -665,9 +667,9 @@
             this.columnDate});
             this.listViewQuestion.FullRowSelect = true;
             this.listViewQuestion.GridLines = true;
-            this.listViewQuestion.Location = new System.Drawing.Point(32, 70);
+            this.listViewQuestion.Location = new System.Drawing.Point(22, 83);
             this.listViewQuestion.Name = "listViewQuestion";
-            this.listViewQuestion.Size = new System.Drawing.Size(578, 230);
+            this.listViewQuestion.Size = new System.Drawing.Size(765, 248);
             this.listViewQuestion.TabIndex = 4;
             this.listViewQuestion.UseCompatibleStateImageBehavior = false;
             this.listViewQuestion.View = System.Windows.Forms.View.Details;
@@ -697,7 +699,7 @@
             // 
             this.labelTitleForum.AutoSize = true;
             this.labelTitleForum.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleForum.Location = new System.Drawing.Point(254, 14);
+            this.labelTitleForum.Location = new System.Drawing.Point(252, 21);
             this.labelTitleForum.Name = "labelTitleForum";
             this.labelTitleForum.Size = new System.Drawing.Size(310, 26);
             this.labelTitleForum.TabIndex = 0;
@@ -723,10 +725,10 @@
             // labelWriteQuestion
             // 
             this.labelWriteQuestion.AutoSize = true;
-            this.labelWriteQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelWriteQuestion.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWriteQuestion.Location = new System.Drawing.Point(20, 128);
             this.labelWriteQuestion.Name = "labelWriteQuestion";
-            this.labelWriteQuestion.Size = new System.Drawing.Size(143, 17);
+            this.labelWriteQuestion.Size = new System.Drawing.Size(137, 17);
             this.labelWriteQuestion.TabIndex = 22;
             this.labelWriteQuestion.Text = "Write your question : ";
             // 
@@ -778,20 +780,20 @@
             // labelChooseCategory
             // 
             this.labelChooseCategory.AutoSize = true;
-            this.labelChooseCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelChooseCategory.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChooseCategory.Location = new System.Drawing.Point(20, 80);
             this.labelChooseCategory.Name = "labelChooseCategory";
-            this.labelChooseCategory.Size = new System.Drawing.Size(139, 17);
+            this.labelChooseCategory.Size = new System.Drawing.Size(129, 17);
             this.labelChooseCategory.TabIndex = 3;
             this.labelChooseCategory.Text = "Choose a category : ";
             // 
             // labelTitlePostQuestion
             // 
             this.labelTitlePostQuestion.AutoSize = true;
-            this.labelTitlePostQuestion.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitlePostQuestion.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitlePostQuestion.Location = new System.Drawing.Point(306, 15);
             this.labelTitlePostQuestion.Name = "labelTitlePostQuestion";
-            this.labelTitlePostQuestion.Size = new System.Drawing.Size(187, 30);
+            this.labelTitlePostQuestion.Size = new System.Drawing.Size(165, 26);
             this.labelTitlePostQuestion.TabIndex = 1;
             this.labelTitlePostQuestion.Text = "Post a question";
             // 
@@ -820,51 +822,16 @@
             this.tabPagePostAnswer.TabIndex = 4;
             this.tabPagePostAnswer.Text = "Post an Answer";
             // 
-            // comboBoxQuestions
+            // label5
             // 
-            this.comboBoxQuestions.FormattingEnabled = true;
-            this.comboBoxQuestions.Location = new System.Drawing.Point(172, 77);
-            this.comboBoxQuestions.Name = "comboBoxQuestions";
-            this.comboBoxQuestions.Size = new System.Drawing.Size(289, 21);
-            this.comboBoxQuestions.TabIndex = 0;
-            // 
-            // textBoxAnswer
-            // 
-            this.textBoxAnswer.Location = new System.Drawing.Point(172, 135);
-            this.textBoxAnswer.Multiline = true;
-            this.textBoxAnswer.Name = "textBoxAnswer";
-            this.textBoxAnswer.Size = new System.Drawing.Size(545, 138);
-            this.textBoxAnswer.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Choose the question :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Write your answer :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(332, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Post an answer";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.label5.Location = new System.Drawing.Point(163, 264);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(377, 12);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "*Note : You might write an answer with at least 3 characters and maximum 1000 cha" +
+    "racters";
             // 
             // buttonPostAnswer
             // 
@@ -879,20 +846,57 @@
             this.buttonPostAnswer.UseVisualStyleBackColor = false;
             this.buttonPostAnswer.Click += new System.EventHandler(this.buttonPostAnswer_Click);
             // 
-            // label5
+            // label4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.label5.Location = new System.Drawing.Point(170, 276);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(377, 12);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "*Note : You might write an answer with at least 3 characters and maximum 1000 cha" +
-    "racters";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(322, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Post an answer";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Write your answer :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Choose a question :";
+            // 
+            // textBoxAnswer
+            // 
+            this.textBoxAnswer.Location = new System.Drawing.Point(165, 127);
+            this.textBoxAnswer.Multiline = true;
+            this.textBoxAnswer.Name = "textBoxAnswer";
+            this.textBoxAnswer.Size = new System.Drawing.Size(553, 134);
+            this.textBoxAnswer.TabIndex = 1;
+            // 
+            // comboBoxQuestions
+            // 
+            this.comboBoxQuestions.FormattingEnabled = true;
+            this.comboBoxQuestions.Location = new System.Drawing.Point(165, 80);
+            this.comboBoxQuestions.Name = "comboBoxQuestions";
+            this.comboBoxQuestions.Size = new System.Drawing.Size(289, 21);
+            this.comboBoxQuestions.TabIndex = 0;
             // 
             // Answers
             // 
             this.Answers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Answers.Controls.Add(this.textBoxAnswerDelete);
+            this.Answers.Controls.Add(this.DeleteAnswer);
             this.Answers.Controls.Add(this.label6);
             this.Answers.Controls.Add(this.listViewAnswers);
             this.Answers.Location = new System.Drawing.Point(4, 22);
@@ -902,48 +906,72 @@
             this.Answers.TabIndex = 5;
             this.Answers.Text = "Answers";
             // 
+            // textBoxAnswerDelete
+            // 
+            this.textBoxAnswerDelete.Location = new System.Drawing.Point(44, 31);
+            this.textBoxAnswerDelete.Name = "textBoxAnswerDelete";
+            this.textBoxAnswerDelete.Size = new System.Drawing.Size(116, 20);
+            this.textBoxAnswerDelete.TabIndex = 8;
+            // 
+            // DeleteAnswer
+            // 
+            this.DeleteAnswer.BackColor = System.Drawing.Color.Brown;
+            this.DeleteAnswer.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteAnswer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DeleteAnswer.Location = new System.Drawing.Point(679, 31);
+            this.DeleteAnswer.Name = "DeleteAnswer";
+            this.DeleteAnswer.Size = new System.Drawing.Size(89, 42);
+            this.DeleteAnswer.TabIndex = 7;
+            this.DeleteAnswer.Text = "Delete";
+            this.DeleteAnswer.UseVisualStyleBackColor = false;
+            this.DeleteAnswer.Click += new System.EventHandler(this.DeleteAnswer_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(266, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(248, 24);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Answers for each question";
+            // 
             // listViewAnswers
             // 
             this.listViewAnswers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnAuthorAnswer,
-            this.columnQuestionText,
             this.columnAnswer,
+            this.columnQuestionText,
             this.columnAnswerDate});
             this.listViewAnswers.FullRowSelect = true;
             this.listViewAnswers.GridLines = true;
-            this.listViewAnswers.Location = new System.Drawing.Point(74, 75);
+            this.listViewAnswers.Location = new System.Drawing.Point(9, 79);
             this.listViewAnswers.Name = "listViewAnswers";
-            this.listViewAnswers.Size = new System.Drawing.Size(615, 240);
+            this.listViewAnswers.Size = new System.Drawing.Size(759, 250);
             this.listViewAnswers.TabIndex = 5;
             this.listViewAnswers.UseCompatibleStateImageBehavior = false;
             this.listViewAnswers.View = System.Windows.Forms.View.Details;
+            this.listViewAnswers.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewAnswers_MouseClick);
             // 
             // columnAuthorAnswer
             // 
             this.columnAuthorAnswer.Text = "Author";
             this.columnAuthorAnswer.Width = 105;
             // 
-            // label6
+            // columnAnswer
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(280, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 24);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Answers for each question";
+            this.columnAnswer.Text = "Answer";
+            this.columnAnswer.Width = 88;
             // 
             // columnQuestionText
             // 
             this.columnQuestionText.Text = "Question";
-            // 
-            // columnAnswer
-            // 
-            this.columnAnswer.Text = "Answer";
+            this.columnQuestionText.Width = 95;
             // 
             // columnAnswerDate
             // 
-            this.columnAnswerDate.Text = "Date";
+            this.columnAnswerDate.Text = "Date Answer";
+            this.columnAnswerDate.Width = 109;
             // 
             // ITTraleeCK
             // 
@@ -1035,8 +1063,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListView listViewAnswers;
         private System.Windows.Forms.ColumnHeader columnAuthorAnswer;
-        private System.Windows.Forms.ColumnHeader columnQuestionText;
         private System.Windows.Forms.ColumnHeader columnAnswer;
+        private System.Windows.Forms.ColumnHeader columnQuestionText;
         private System.Windows.Forms.ColumnHeader columnAnswerDate;
+        private System.Windows.Forms.Button DeleteAnswer;
+        private System.Windows.Forms.TextBox textBoxAnswerDelete;
     }
 }

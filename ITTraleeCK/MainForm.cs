@@ -155,8 +155,8 @@ namespace ITTraleeCK
             foreach(Answer a in answers)
             {
                 ListViewItem item = new ListViewItem(a.Member.Username);
-                item.SubItems.Add(a.Question.QuestionText);
                 item.SubItems.Add(a.AnswerText);
+                item.SubItems.Add(a.Question.QuestionText);
                 item.SubItems.Add(a.AnswerDate.ToString());
 
                 listViewAnswers.Items.Add(item);
@@ -312,6 +312,27 @@ namespace ITTraleeCK
             {
                 MessageBox.Show("Your can't post empty Answer");
             }
+        }
+
+        private void DeleteAnswer_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("You will delete an answer. Are you sure you want to continue ?", "DELETE A ANSWER", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    DAOAnswer.DeleteAnswer(textBoxAnswerDelete.Text);
+                    DisplayAllAnswers();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        
+        private void listViewAnswers_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxAnswerDelete.Text = listViewAnswers.SelectedItems[0].SubItems[1].Text;
         }
     }
 }

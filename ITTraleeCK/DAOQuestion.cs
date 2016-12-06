@@ -92,6 +92,10 @@ namespace ITTraleeCK
 
         }
 
+        /**
+         * Method to delete a question
+         * 
+         */
        public static void DeleteQuestion(string questionText)
         {
             if (!DBConnection.IsOpen)

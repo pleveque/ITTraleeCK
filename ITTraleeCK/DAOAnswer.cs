@@ -90,7 +90,34 @@ namespace ITTraleeCK
             DBConnection.Close();
         }
 
-    
+        public static void DeleteAnswer(string answerText)
+        {
+            if (!DBConnection.IsOpen)
+            {
+                // opens the connection 
+                DBConnection.Open();
+            }
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = DBConnection.Connection;
+
+            string strSQL = @"DELETE FROM ANSWER WHERE ANSWER_TEXT='" + answerText + "'";
+
+            cmd.CommandText = strSQL;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Answer deleted !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            DBConnection.Close();
+        }
 
     }
 }
